@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-03_18-57-18",
+            "content": "@@ -1707,12 +1707,8 @@\n trado%22)%0A\n-%0A%0A%0A%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-10-03_19-01-55",
+            "content": "@@ -1707,13 +1707,12 @@\n trado%22)%0A%0A%0A%0A%0A\n-%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-10-03_19-06-25",
+            "content": "@@ -53,16 +53,28 @@\n : str): \n+# construtor\n %0A       \n@@ -98,16 +98,27 @@\n = color \n+# atributos\n %0A       \n@@ -549,16 +549,31 @@\n  == %22P%22:\n+ # early return\n %0A       \n@@ -706,16 +706,32 @@\n eturn 0 \n+# default return\n %0A%0A    de\n@@ -753,16 +753,27 @@\n  -%3E str:\n+ # toString\n %0A       \n@@ -898,25 +898,82 @@\n  %22%22)\n-%0A    while True: \n+ # 2: criar um obj com qq valor inicial%0A    while True: # 3: loop infinito\n %0A%0A  \n@@ -998,16 +998,41 @@\n input() \n+# 4: perguntar ao usuario\n %0A       \n@@ -1050,16 +1050,22 @@\n + line) \n+# echo\n %0A       \n@@ -1098,16 +1098,41 @@\n lit(%22 %22)\n+ # 5: separar argumentos%0A\n %0A       \n@@ -1204,16 +1204,28 @@\n criar%22: \n+# color size\n %0A       \n@@ -1647,16 +1647,25 @@\n   else: \n+# 7: erro\n %0A       \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-10-03_19-09-27",
+            "content": "@@ -57,20 +57,8 @@\n r): \n-# construtor\n %0A   \n@@ -90,19 +90,8 @@\n lor \n-# atributos\n %0A   \n@@ -530,23 +530,8 @@\n %22P%22:\n- # early return\n %0A   \n@@ -672,24 +672,8 @@\n n 0 \n-# default return\n %0A%0A  \n@@ -703,19 +703,8 @@\n str:\n- # toString\n %0A   \n@@ -833,82 +833,25 @@\n  %22%22)\n- # 2: criar um obj com qq valor inicial%0A    while True: # 3: loop infinito\n+%0A    while True: \n %0A%0A  \n@@ -880,33 +880,8 @@\n t() \n-# 4: perguntar ao usuario\n %0A   \n@@ -907,14 +907,8 @@\n ne) \n-# echo\n %0A   \n@@ -949,33 +949,8 @@\n %22 %22)\n- # 5: separar argumentos%0A\n %0A   \n@@ -1030,20 +1030,8 @@\n r%22: \n-# color size\n %0A   \n@@ -1461,17 +1461,8 @@\n se: \n-# 7: erro\n %0A   \n@@ -1513,21 +1513,8 @@\n %22)%0A%0A\n-main() # passo 1\n+%0A%0A%0A\n %0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-10-03_19-23-40",
+            "content": "class Towel:\n    def __init__(self, color: str, size: str): # construtor\n        self.color: str = color # atributos\n        self.size: str = size\n        self.wetness: int = 0\n    \n    def dry(self, amount: int) -> None:\n        self.wetness += amount\n        if self.wetness >= self.isMaxWetness():\n            self.wetness = self.isMaxWetness()\n            print(\"toalha encharcada\")\n\n    def isDry(self):\n        return self.wetness == 0\n\n    def wringOut(self):\n        self.wetness = 0\n\n    def isMaxWetness(self) -> int:\n        if self.size == \"P\": # early return\n            return 10\n        if self.size == \"M\":\n            return 20\n        if self.size == \"G\":\n            return 30\n        return 0 # default return\n\n    def __str__(self) -> str: # toString\n        return f\"Cor: {self.color}, Tamanho: {self.size}, Umidade: {self.wetness}\"\n\ndef main(): \n    towel: Towel = Towel(\"\", \"\") # 2: criar um obj com qq valor inicial\n    while True: # 3: loop infinito\n\n        line: str = input() # 4: perguntar ao usuario\n        print(\"$\" + line) # echo\n        args: list[str] = line.split(\" \") # 5: separar argumentos\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"criar\": # color size\n            color: str = args[1]\n            size: str = args[2]\n            towel = Towel(color, size)\n        elif args[0] == \"seca\":\n            print(\"sim\" if towel.isDry() else \"nao\")\n        elif args[0] == \"torcer\":\n            towel.wringOut()\n        elif args[0] == \"enxugar\":\n            amount: int = int(args[1])\n            towel.dry(amount)\n        elif args[0] == \"mostrar\":\n            print(towel)\n        else: # 7: erro\n            print(\"fail: comando n\u00e3o encontrado\")\n\nmain() # passo 1\n",
+            "lines": "57"
+        }
+    ]
+}

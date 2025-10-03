@@ -27,7 +27,6 @@ tko init --remote poo --folder poo --lang py --filter BLOCO_A BLOCO_B
 
 ## Interagindo com seu repositório
 tko open poo
-
 ## Rodando um código diretamente
 tko run <arquivo_codigo>  # usando interface default
 tko gui  <arquivo_codigo>  # usando interface curses
